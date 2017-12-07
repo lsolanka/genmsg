@@ -1,5 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
+include(cmake/HunterGate.cmake)
+HunterGate(
+    URL "https://github.com/ruslo/hunter/archive/v0.20.45.tar.gz"
+    SHA1 "dbd69df4f1445cc8094325db2c0a51cb270c4f25"
+)
+
 project(genmsg)
+
+hunter_add_package(catkin)
+
 find_package(catkin REQUIRED)
 
 catkin_package(CFG_EXTRAS genmsg-extras.cmake)
